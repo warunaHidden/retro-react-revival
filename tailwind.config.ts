@@ -18,7 +18,14 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'playfair': ['Playfair Display', 'serif'],
+				'cormorant': ['Cormorant Garamond', 'serif'],
+				'greatvibes': ['Great Vibes', 'cursive'],
+			},
 			colors: {
+				'maple-red': '#FF3B3B',
+				'maple-gold': '#D4AF37',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
