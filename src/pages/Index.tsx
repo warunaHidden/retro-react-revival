@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { Instagram, Mail, Phone } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
-      <nav className="bg-white p-4 fixed w-full z-10 top-0 shadow-sm">
+      <nav className="bg-white p-4 fixed w-full z-10 top-0 shadow-sm animate-fade-in">
         <div className="container mx-auto flex justify-between items-center">
           <div className="font-playfair text-xl text-maple-red animate-fade-in">MAPLE WRAPS</div>
           <div className="hidden md:flex space-x-8">
@@ -25,11 +25,23 @@ const Index = () => {
       </nav>
 
       {/* Hero Section with Background Image */}
-      <section className="relative h-screen bg-[url('/lovable-uploads/12f67c27-c676-4364-a87d-cdc6d0fb1eed.png')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/30" /> {/* Overlay for better text readability */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center animate-fade-in">
-          <h1 className="font-playfair text-white text-6xl md:text-8xl mb-4 z-10">MAPLE WRAPS</h1>
-          <p className="font-cormorant italic text-white text-2xl md:text-3xl mt-4 z-10">DANCEFLOORS MADE EASY</p>
+      <section className="relative h-screen">
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/12f67c27-c676-4364-a87d-cdc6d0fb1eed.png"
+            alt="Maple Wraps Hero"
+            className="w-full h-full object-cover animate-fade-in"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/30" />
+        </div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+          <h1 className="font-playfair text-white text-6xl md:text-8xl mb-4 z-10 animate-fade-in transition-transform hover:scale-105 duration-500">
+            MAPLE WRAPS
+          </h1>
+          <p className="font-cormorant italic text-white text-2xl md:text-3xl mt-4 z-10 animate-fade-in transition-transform hover:scale-105 duration-500">
+            DANCEFLOORS MADE EASY
+          </p>
         </div>
       </section>
 
@@ -40,9 +52,12 @@ const Index = () => {
             <img 
               src="/lovable-uploads/bc4b8409-3ce5-4c01-8410-9856d890313c.png"
               alt="Maple Wraps Decorative"
-              className="w-32 h-32 object-cover rounded-full animate-fade-in"
+              className="w-32 h-32 object-cover rounded-full animate-fade-in hover:scale-110 transition-transform duration-300"
+              loading="lazy"
             />
-            <h2 className="font-playfair text-maple-red text-5xl animate-fade-in italic">MAPLE WRAPS what?</h2>
+            <h2 className="font-playfair text-maple-red text-5xl animate-fade-in hover:text-maple-gold transition-colors duration-300 italic">
+              MAPLE WRAPS what?
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -68,15 +83,16 @@ const Index = () => {
             src="/lovable-uploads/606717fb-ebd3-4464-919f-d7f2ba1c05f1.png"
             alt="Templates Background"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/50" /> {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <p className="font-cormorant italic text-white text-3xl mb-4 animate-fade-in">
+            <p className="font-cormorant italic text-white text-3xl mb-4 animate-fade-in hover:scale-105 transition-transform duration-300">
               "Choose from our pre-designed templates, (you can also further customize) and enjoy great discounts"
             </p>
-            <p className="font-cormorant italic text-white text-xl animate-fade-in">
+            <p className="font-cormorant italic text-white text-xl animate-fade-in hover:scale-105 transition-transform duration-300">
               Ready to Transform Your Space? Contact Us Today for a Free Quote!
             </p>
           </div>
@@ -89,12 +105,13 @@ const Index = () => {
           <h2 className="font-playfair text-maple-red text-5xl mb-16 italic animate-fade-in">How it Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[...Array(6)].map((_, index) => (
-              <Card key={index} className="bg-gray-800 hover:scale-105 transition-transform duration-300">
+              <Card key={index} className="bg-gray-800 hover:scale-105 transition-transform duration-300 animate-fade-in">
                 <CardContent className="p-6">
                   <img 
                     src="/lovable-uploads/154aa1bd-7018-4e75-a222-54468e67b685.png"
                     alt={`Step ${index + 1}`}
                     className="w-full h-48 object-cover rounded-lg mb-4"
+                    loading="lazy"
                   />
                   <p className="font-cormorant text-maple-red text-xl text-center">Step {index + 1}</p>
                 </CardContent>
