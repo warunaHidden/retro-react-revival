@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import Navigation from '@/components/Navigation';
 import {
   Table,
   TableBody,
@@ -59,8 +60,9 @@ export default function Pricing() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 py-20">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-gray-900">
+      <Navigation />
+      <div className="container mx-auto px-4 pt-24">
         <h1 className="font-playfair text-maple-red text-5xl mb-16 text-center italic animate-fade-in">Pricing</h1>
         
         <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto">
@@ -159,4 +161,4 @@ export default function Pricing() {
       </div>
     </div>
   );
-}
+};
