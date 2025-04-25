@@ -1,6 +1,8 @@
+
 import { useState, lazy, Suspense } from 'react';
 import { Instagram, Mail, Phone } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [inquiryName, setInquiryName] = useState('');
@@ -19,6 +21,7 @@ const Index = () => {
           <div className="hidden md:flex space-x-8">
             <a href="#what" className="font-cormorant hover:text-maple-red transition-colors duration-300">What?</a>
             <a href="#how" className="font-cormorant hover:text-maple-red transition-colors duration-300">How it Works</a>
+            <Link to="/pricing" className="font-cormorant hover:text-maple-red transition-colors duration-300">Pricing</Link>
             <a href="#quote" className="font-cormorant hover:text-maple-red transition-colors duration-300">Get Quote</a>
           </div>
         </div>
