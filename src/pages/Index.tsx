@@ -1,7 +1,7 @@
-
-import { useState, lazy, Suspense } from 'react';
+import { useState } from 'react';
 import { Instagram, Mail, Phone } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import Navigation from '@/components/Navigation';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -14,19 +14,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navbar */}
-      <nav className="bg-white p-4 fixed w-full z-10 top-0 shadow-sm animate-fade-in">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="font-playfair text-xl text-maple-red animate-fade-in">MAPLE WRAPS</div>
-          <div className="hidden md:flex space-x-8">
-            <a href="#what" className="font-cormorant hover:text-maple-red transition-colors duration-300">What?</a>
-            <a href="#how" className="font-cormorant hover:text-maple-red transition-colors duration-300">How it Works</a>
-            <Link to="/pricing" className="font-cormorant hover:text-maple-red transition-colors duration-300">Pricing</Link>
-            <a href="#quote" className="font-cormorant hover:text-maple-red transition-colors duration-300">Get Quote</a>
-          </div>
-        </div>
-      </nav>
-
+      <Navigation />
+      
       {/* Hero Section with Background Image */}
       <section className="relative h-screen">
         <div className="absolute inset-0">
